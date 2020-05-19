@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: iu;
+			src:url(10826.ttf);
+		}
+		.bg {
+			background-image: url(bg1.jpg);
+			width: 1350px;
+			height: 640px;
+		}
+		.card1 {
+			background-image: url(audi.jpg); 
+			height: 200px; 
+			width: 300px; 
+			background-size: 100% 100%; 
+			position: absolute; 
+			top: 40%; 
+			left: 3%;
+			border: 5px solid white;
+		}
+		.card2 {
+			background-image: url(bmw.jpg); 
+			height: 200px;
+			 width: 300px; 
+			 background-size: 100% 100%; 
+			 position: absolute; 
+			 left: 68%;
+			 top: 15%;
+			 border: 5px solid white;
+		}
+		.card3 {
+			background-image: url(bugatti.jpg); 
+			height: 200px; 
+			width: 300px; 
+			background-size: 100% 100%; 
+			position: absolute; 
+			left: 40%; 
+			top: 65%;
+			border: 5px solid white;
+		}
+		.card4 {
+			background-image: url(chevrolet.jpg); 
+			height: 200px; 
+			width: 300px;
+			background-size: 100% 100%;
+			position: absolute; 
+			left: 10%; 
+			top: 70%;
+			border: 5px solid white;
+		}
+		.card5 {
+			background-image: url(ferrari.jpg); 
+			height: 200px; 
+			width: 300px; 
+			background-size: 100% 100%; 
+			position: absolute; 
+			left: 10%; 
+			top: 15%;
+			border: 5px solid white;
+		}
+		.card6 {
+			background-image: url(jaguar.jpg); 
+			height: 200px; 
+			width: 300px; 
+			background-size: 100% 100%; 
+			position: absolute; 
+			left: 75%;
+			 top: 40%;
+			 border: 5px solid white;
+		}
+		.card7 {
+			background-image: url(lamborgini.jpg);
+			 height: 200px; 
+			 width: 300px; 
+			 background-size: 100% 100%; 
+			 position: absolute; 
+			 left: 40%; 
+			 top: 10%;
+			 border: 5px solid white;
+		}
+		.card8 {
+			background-image: url(porche.jpg); 
+			height: 200px; 
+			width: 300px; 
+			background-size: 100% 100%; 
+			position: absolute; 
+			left: 68%; 
+			top: 70%;
+			border: 5px solid white;
+		}
+		.vopros {
+			display: block;
+		}
+		.text {
+			position: absolute; 
+			left: 38%; 
+			top: 42%;
+			text-decoration: blink;
+			font-family: iu;
+			font-size: 50px;
+			display: none;
+
+		}
+		.t1 {
+			font-weight: bold;
+			color: white;
+			font-family: iu;
+		}
+		.btn {
+			position: absolute; 
+			left: 3%;
+			border-radius: 10px;
+			color: white;
+			background-color: black;
+
+		}
+		.img {
+			position: absolute; 
+			left: 45%; 
+			top: 45%;
+			height: 100px;
+			width: 150px;
+		}
+		.win {
+			background-image: url(3.gif);
+			width: 480px;
+			height: 480px;
+			margin-left: auto;
+			margin-right: auto;
+			display: none;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="bg">
+		<h1 class="t1"> Попытки: <span class="point"></span></h1>
+		<button class="btn">Спрятать</button>	
+		<div class="card1"></div>
+		<div class="card2" ></div>
+		<div class="col-4 card3" ></div>
+		<div class="col-4 card4"></div>
+		<div class="col-4 card5" ></div>
+		<div class="col-4 card6" ></div>
+		<div class="col-4 card7" ></div>
+		<div class="col-4 card8" ></div>	
+			<div class="vopros">
+				<img src="1.gif" class="img">
+				<h1 class="text">Найди Chevrolet</h1>
+			</div> 
+	</div>
+	<div class="win">
+		
+	</div>
+	
+<script>
+		let popitki = 3;
+
+		document.querySelector(".point").innerHTML = popitki;
+
+		document.querySelector(".btn").onclick = function(){
+			document.querySelector(".img").style.display = "none";
+			document.querySelector(".text").style.display = "block";
+			document.querySelector(".card1").style.backgroundImage = "none";
+			document.querySelector(".card1").style.backgroundColor = "black";
+			document.querySelector(".card2").style.backgroundImage = "none";
+			document.querySelector(".card2").style.backgroundColor = "black";
+			document.querySelector(".card3").style.backgroundImage = "none";
+			document.querySelector(".card3").style.backgroundColor = "black";
+			document.querySelector(".card4").style.backgroundImage = "none";
+			document.querySelector(".card4").style.backgroundColor = "black";
+			document.querySelector(".card5").style.backgroundImage = "none";
+			document.querySelector(".card5").style.backgroundColor = "black";
+			document.querySelector(".card6").style.backgroundImage = "none";
+			document.querySelector(".card6").style.backgroundColor = "black";
+			document.querySelector(".card7").style.backgroundImage = "none";
+			document.querySelector(".card7").style.backgroundColor = "black";
+			document.querySelector(".card8").style.backgroundImage = "none";
+			document.querySelector(".card8").style.backgroundColor = "black";
+		}
+			
+
+		document.querySelector(".card1").onclick = function(){
+		alert("Это Audi");
+		popitki = popitki-1;
+		document.querySelector(".point").innerHTML = popitki;
+		document.querySelector(".card1").style.backgroundColor = "none";
+		document.querySelector(".card1").style.backgroundImage = "url(audi.jpg)";
+		document.querySelector(".card1").style.backgroundSize = "100% 100%";
+			if(popitki == 0){
+			
+			document.querySelector(".card1").style.display = "none";
+			document.querySelector(".card2").style.display = "none";
+			document.querySelector(".card3").style.display = "none";
+			document.querySelector(".card5").style.display = "none";
+			document.querySelector(".card6").style.display = "none";
+			document.querySelector(".card7").style.display = "none";
+			document.querySelector(".card8").style.display = "none";
+			document.querySelector(".card4").style.backgroundImage = "url(chevrolet.jpg)";
+			document.querySelector(".card4").style.backgroundSize = "100% 100%";
+		}
+	}
+
+	document.querySelector(".card2").onclick = function(){
+		alert("Это BMW");
+		popitki = popitki-1;
+		document.querySelector(".point").innerHTML = popitki;
+		document.querySelector(".card2").style.backgroundColor = "none";
+		document.querySelector(".card2").style.backgroundImage = "url(bmw.jpg)";
+		document.querySelector(".card2").style.backgroundSize = "100% 100%";
+			if(popitki == 0){
+			
+			document.querySelector(".card1").style.display = "none";
+			document.querySelector(".card2").style.display = "none";
+			document.querySelector(".card3").style.display = "none";
+			document.querySelector(".card5").style.display = "none";
+			document.querySelector(".card6").style.display = "none";
+			document.querySelector(".card7").style.display = "none";
+			document.querySelector(".card8").style.display = "none";
+			document.querySelector(".card4").style.backgroundImage = "url(chevrolet.jpg)";
+			document.querySelector(".card4").style.backgroundSize = "100% 100%";
+		}
+	}
+
+	document.querySelector(".card3").onclick = function(){
+		alert("Нет, это Bugatti");
+		popitki = popitki-1;
+		document.querySelector(".point").innerHTML = popitki;
+		document.querySelector(".card3").style.backgroundColor = "none";
+		document.querySelector(".card3").style.backgroundImage = "url(bugatti.jpg)";
+		document.querySelector(".card3").style.backgroundSize = "100% 100%";
+			if(popitki == 0){
+			
+			document.querySelector(".card1").style.display = "none";
+			document.querySelector(".card2").style.display = "none";
+			document.querySelector(".card3").style.display = "none";
+			document.querySelector(".card5").style.display = "none";
+			document.querySelector(".card6").style.display = "none";
+			document.querySelector(".card7").style.display = "none";
+			document.querySelector(".card8").style.display = "none";
+			document.querySelector(".card4").style.backgroundImage = "url(chevrolet.jpg)";
+			document.querySelector(".card4").style.backgroundSize = "100% 100%";
+		}
+	}
+
+	document.querySelector(".card4").onclick = function(){
+		alert("Молодец ты нашел!");
+		popitki = popitki-1;
+		document.querySelector(".point").innerHTML = popitki;
+		document.querySelector(".card4").style.backgroundColor = "none";
+		document.querySelector(".card4").style.backgroundImage = "url(chevrolet.jpg)";
+		document.querySelector(".card4").style.backgroundSize = "100% 100%";
+		if(popitki >= 0){
+			document.querySelector(".bg").style.display = "none";
+			document.querySelector(".win").style.display = "block";
+		}
+	}
+
+	document.querySelector(".card5").onclick = function(){
+		alert("Неправильно, это Ferrari");
+		popitki = popitki-1;
+		document.querySelector(".point").innerHTML = popitki;
+		document.querySelector(".card5").style.backgroundColor = "none";
+		document.querySelector(".card5").style.backgroundImage = "url(ferrari.jpg)";
+		document.querySelector(".card5").style.backgroundSize = "100% 100%";
+			if(popitki == 0){
+			
+			document.querySelector(".card1").style.display = "none";
+			document.querySelector(".card2").style.display = "none";
+			document.querySelector(".card3").style.display = "none";
+			document.querySelector(".card5").style.display = "none";
+			document.querySelector(".card6").style.display = "none";
+			document.querySelector(".card7").style.display = "none";
+			document.querySelector(".card8").style.display = "none";
+			document.querySelector(".card4").style.backgroundImage = "url(chevrolet.jpg)";
+			document.querySelector(".card4").style.backgroundSize = "100% 100%";
+		}
+	}
+
+	document.querySelector(".card6").onclick = function(){
+		alert("Jaguar");
+		popitki = popitki-1;
+		document.querySelector(".point").innerHTML = popitki;
+		document.querySelector(".card6").style.backgroundColor = "none";
+		document.querySelector(".card6").style.backgroundImage = "url(jaguar.jpg)";
+		document.querySelector(".card6").style.backgroundSize = "100% 100%";
+			if(popitki == 0){
+			
+			document.querySelector(".card1").style.display = "none";
+			document.querySelector(".card2").style.display = "none";
+			document.querySelector(".card3").style.display = "none";
+			document.querySelector(".card5").style.display = "none";
+			document.querySelector(".card6").style.display = "none";
+			document.querySelector(".card7").style.display = "none";
+			document.querySelector(".card8").style.display = "none";
+			document.querySelector(".card4").style.backgroundImage = "url(chevrolet.jpg)";
+			document.querySelector(".card4").style.backgroundSize = "100% 100%";
+		}
+	}
+
+	document.querySelector(".card7").onclick = function(){
+		alert("Это же Lamborgini");
+		popitki = popitki-1;
+		document.querySelector(".point").innerHTML = popitki;
+		document.querySelector(".card7").style.backgroundColor = "none";
+		document.querySelector(".card7").style.backgroundImage = "url(lamborgini.jpg)";
+		document.querySelector(".card7").style.backgroundSize = "100% 100%";
+			if(popitki == 0){
+			
+			document.querySelector(".card1").style.display = "none";
+			document.querySelector(".card2").style.display = "none";
+			document.querySelector(".card3").style.display = "none";
+			document.querySelector(".card5").style.display = "none";
+			document.querySelector(".card6").style.display = "none";
+			document.querySelector(".card7").style.display = "none";
+			document.querySelector(".card8").style.display = "none";
+			document.querySelector(".card4").style.backgroundImage = "url(chevrolet.jpg)";
+			document.querySelector(".card4").style.backgroundSize = "100% 100%";
+		}
+	}
+
+	document.querySelector(".card8").onclick = function(){
+		alert("Ну что ты, это же Porche");
+		popitki = popitki-1;
+		document.querySelector(".point").innerHTML = popitki;
+		document.querySelector(".card8").style.backgroundColor = "none";
+		document.querySelector(".card8").style.backgroundImage = "url(porche.jpg)";
+		document.querySelector(".card8").style.backgroundSize = "100% 100%";
+			if(popitki == 0){
+			
+			document.querySelector(".card1").style.display = "none";
+			document.querySelector(".card2").style.display = "none";
+			document.querySelector(".card3").style.display = "none";
+			document.querySelector(".card5").style.display = "none";
+			document.querySelector(".card6").style.display = "none";
+			document.querySelector(".card7").style.display = "none";
+			document.querySelector(".card8").style.display = "none";
+			document.querySelector(".card4").style.backgroundImage = "url(chevrolet.jpg)";
+			document.querySelector(".card4").style.backgroundSize = "100% 100%";
+		}
+	}
+</script>	
+</body>
+</html>
